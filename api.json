@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "d397541e-fb1f-4818-a274-8cf9930bfdd7",
+		"name": "AdobeSign",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FirstRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "File-Name",
+							"value": "Prueba1",
+							"type": "text"
+						},
+						{
+							"key": "File",
+							"type": "file",
+							"src": "/C:/Users/juan.conde/Desktop/Extracto.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://coomeva.na1.echosign.com/api/rest/v5/transientDocuments",
+					"protocol": "https",
+					"host": [
+						"coomeva",
+						"na1",
+						"echosign",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"v5",
+						"transientDocuments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SecondRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"signatureType\": \"WRITTEN\",\r\n    \"signatureFlow\": \"Documentos Garantías Microcrédito Fundación Persona Jurídica / Natural (Core Microcrédito)\",\r\n    \"name\": \"NOMBREDOCUMENTO\",\r\n    \"recipientSetInfos\": [\r\n        {\r\n            \"recipientSetMemberInfos\": [\r\n                {\r\n                    \"email\": \"dirección de correo electrónico firmante 1 \"\r\n                }\r\n            ],\r\n            \"recipientSetRole\": \"SIGNER\",\r\n            \"singningOrder\": 1\r\n        },\r\n        {\r\n            \"recipientSetMemberInfos\": [\r\n                {\r\n                    \"email\": \" dirección de correo electrónico firmante 2 \"\r\n                }\r\n            ],\r\n            \"recipientSetRole\": \"SIGNER\",\r\n            \"singningOrder\": 2\r\n        },\r\n        {\r\n            \"recipientSetMemberInfos\": [\r\n                {\r\n                    \"email\": \"dirección de correo electrónico firmante 3\"\r\n                }\r\n            ],\r\n            \"recipientSetRole\": \"'SIGNER' \",\r\n            \"singningOrder\": 3\r\n        }\r\n    ],\r\n    \"fileInfos\": [\r\n        {\r\n            \"libraryDocumentId\": \"3AAABLblqZhCcV3QPuOw3D6zXIp8wdIGyIsky_w7Da_vgA2uUHpE0kFI71tJ3LyFhzzYyoM2oD2XdFqXGGpS7O_GAmkrGkofTyweAKhDPqSoLq0H_9DlL4zC74tIAr0D-QsdtqzQmrOiwMpYrKjqS_iSktLxxaeX3cB_jxlTk-7NxQnxGR8yfu6-oGUs7foqX3imogBsUZhxE2bUQxdZO0da1sDG9nESKqd-NDXVPIxE5-vhMgvGCiJ_ybeFsA_jXZfhDB2h9DyKrDBprJhT-erh0HwvffkBpprELwwBAVA1x0cd2QFNxDTE_KRJbaCAvq41f1xFO5MQ*\"\r\n        }\r\n    ],\r\n    \"formFields\": [\r\n        {\r\n            \"locations\": [\r\n                {\r\n                    \"height\": 30,\r\n                    \"left\": 327,\r\n                    \"pageNumber\": \"1\",\r\n                    \"top\": 107,\r\n                    \"width\": 230\r\n                }\r\n            ],\r\n            \"name\": \"txtAsignature1\",\r\n            \"alignment\": \"CENTER\",\r\n            \"contentType\": \"SIGNATURE\",\r\n            \"fontColor\": \"000000\",\r\n            \"inputType\": \"SIGNATURE\",\r\n            \"readOnly\": false,\r\n            \"recipientIndex\": 1,\r\n            \"required\": true\r\n        },\r\n        {\r\n            \"locations\": [\r\n                {\r\n                    \"height\": 30,\r\n                    \"left\": 327,\r\n                    \"pageNumber\": \"1\",\r\n                    \"top\": 65,\r\n                    \"width\": 230\r\n                }\r\n            ],\r\n            \"name\": \"txtAsignature2\",\r\n            \"alignment\": \"CENTER\",\r\n            \"contentType\": \"SIGNATURE\",\r\n            \"fontColor\": \"000000\",\r\n            \"inputType\": \"SIGNATURE\",\r\n            \"readOnly\": false,\r\n            \"recipientIndex\": 2,\r\n            \"required\": true\r\n        }\r\n    ],\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://coomeva.na1.echosign.com/api/rest/v5/agreements",
+					"protocol": "https",
+					"host": [
+						"coomeva",
+						"na1",
+						"echosign",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"v5",
+						"agreements"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "3AAABLblqZhBh5xs0ySK1SlBoIAyxhSqZy4t5svyprX4AIJFBmv-TWI0SfR6I8XR9O_hVANAsg3imRDAy_9Vl4DDdDHcxGxCB"
+		},
+		{
+			"key": "transientDocumentId",
+			"value": "3AAABLblqZhBDP45pFjUGQ-5HRHKBhdKqPh0iXhO8Vx81NbTwjVxhjPWe7fUfzNGGDLAEEpU3ach_eYvFRoD0LW9AO6JBLxsey93R3E83IlLQFNCH7pPQaUDH4hRdcUcaNcCmTItc6bQy_mu0NbSDshF8OCuBVQvuv372nzpLncqRPU2_lar4E1jrcxsm00iSMApve4OOXKgztBNe5TYr6Py8kLNBa0DUwx7eFtHpAL0Tg6WGfF6sEP31TupNeuEiuMemJQEN7LIOEVbUxEDBsEkfMexin03RbYI18eH17fp6AqLJ5j4jVe1bASywpNE8Pbwm-vAWdi8*"
+		}
+	]
+}

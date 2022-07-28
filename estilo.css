@@ -1,0 +1,20 @@
+#tabla{
+width: 60%;
+height: 60%;
+border-color: rgb(0, 255, 47);
+}
+
+#cabecera{
+
+background-color: aquamarine;
+
+}
+#visualizador{
+margin-top: 10cm;
+position: absolute;
+margin: 100;
+right: 1mm;
+top: -8.8cm;
+margin-right: -1.5%;
+}
+
